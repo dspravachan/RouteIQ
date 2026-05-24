@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+/* ─── TOKENS ─────────────────────────────────────────────── */
+:root {
+  --bg:       #060910;
+  --bg-1:     #0b0f1a;
+  --bg-2:     #10151f;
+  --bg-3:     #151c28;
+
+  --line:     rgba(255,255,255,0.06);
+  --line-md:  rgba(255,255,255,0.10);
+  --line-hi:  rgba(255,255,255,0.16);
+
+  --cyan:     #22d3ee;
+  --cyan-lo:  rgba(34,211,238,0.10);
+  --cyan-md:  rgba(34,211,238,0.20);
+
+  --violet:   #818cf8;
+  --violet-lo:rgba(129,140,248,0.10);
+
+  --amber:    #f59e0b;
+  --amber-lo: rgba(245,158,11,0.10);
+
+  --green:    #34d399;
+  --green-lo: rgba(52,211,153,0.10);
+
+  --rose:     #f87171;
+  --rose-lo:  rgba(248,113,113,0.10);
+
+  --orange:   #fb923c;
+
+  --text:     #e4e8f0;
+  --text-2:   rgba(228,232,240,0.55);
+  --text-3:   rgba(228,232,240,0.30);
+
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 20px;
+}
+
+/* ─── RESET ──────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { height: 100%; }
+
+body {
+  font-family: 'Geist', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ─── SCROLLBAR ──────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: var(--cyan); }
+::selection { background: rgba(34,211,238,0.2); }
+
+/* ─── TYPOGRAPHY ─────────────────────────────────────────── */
+.mono { font-family: 'Geist Mono', monospace; }
+
+/* ─── SURFACE ────────────────────────────────────────────── */
+.surface {
+  background: var(--bg-1);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+}
+.surface-2 {
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+}
+.surface-hover {
+  background: var(--bg-1);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  transition: border-color 0.2s, background 0.2s, transform 0.2s;
+}
+.surface-hover:hover {
+  border-color: var(--line-md);
+  background: var(--bg-2);
+  transform: translateY(-2px);
+}
+
+/* ─── BUTTONS ────────────────────────────────────────────── */
+.btn {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 9px 18px; border-radius: var(--r-md);
+  font-size: 13px; font-weight: 600; font-family: 'Geist', sans-serif;
+  border: none; cursor: pointer; transition: all 0.15s; outline: none;
+  white-space: nowrap; letter-spacing: 0.01em;
+}
+.btn:active { transform: scale(0.97); }
+
+.btn-primary {
+  background: var(--cyan);
+  color: #060910;
+  box-shadow: 0 0 0 0 rgba(34,211,238,0);
+}
+.btn-primary:hover {
+  background: #38e8ff;
+  box-shadow: 0 0 20px rgba(34,211,238,0.35);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-2);
+  border: 1px solid var(--line-md);
+}
+.btn-ghost:hover {
+  background: var(--bg-2);
+  color: var(--text);
+  border-color: var(--line-hi);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--cyan);
+  border: 1px solid rgba(34,211,238,0.35);
+}
+.btn-outline:hover {
+  background: var(--cyan-lo);
+  border-color: rgba(34,211,238,0.6);
+  box-shadow: 0 0 12px rgba(34,211,238,0.15);
+}
+
+.btn-danger {
+  background: transparent;
+  color: var(--rose);
+  border: 1px solid rgba(248,113,113,0.25);
+}
+.btn-danger:hover { background: var(--rose-lo); }
+
+.btn-violet {
+  background: transparent;
+  color: var(--violet);
+  border: 1px solid rgba(129,140,248,0.3);
+}
+.btn-violet:hover { background: var(--violet-lo); }
+
+.btn-secondary {
+  background: var(--bg-2);
+  color: var(--text-2);
+  border: 1px solid var(--line-md);
+}
+.btn-secondary:hover { color: var(--text); border-color: var(--line-hi); }
+
+.btn-amber {
+  background: transparent;
+  color: var(--amber);
+  border: 1px solid rgba(245,158,11,0.3);
+}
+.btn-amber:hover { background: var(--amber-lo); }
+
+.btn-cyan {
+  background: var(--cyan-lo);
+  color: var(--cyan);
+  border: 1px solid rgba(34,211,238,0.3);
+}
+.btn-cyan:hover { background: var(--cyan-md); }
+
+/* ─── TAGS / CHIPS ───────────────────────────────────────── */
+.chip {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 3px 9px; border-radius: 99px;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.03em;
+  border: 1px solid var(--line-md); color: var(--text-2);
+  background: var(--bg-2);
+}
+.chip-cyan  { color: var(--cyan);   border-color: rgba(34,211,238,0.25);  background: rgba(34,211,238,0.06);  }
+.chip-violet{ color: var(--violet); border-color: rgba(129,140,248,0.25); background: rgba(129,140,248,0.06); }
+.chip-amber { color: var(--amber);  border-color: rgba(245,158,11,0.25);  background: rgba(245,158,11,0.06);  }
+.chip-green { color: var(--green);  border-color: rgba(52,211,153,0.25);  background: rgba(52,211,153,0.06);  }
+.chip-rose  { color: var(--rose);   border-color: rgba(248,113,113,0.25); background: rgba(248,113,113,0.06); }
+.chip-orange{ color: var(--orange); border-color: rgba(251,146,60,0.25);  background: rgba(251,146,60,0.06);  }
+
+/* keep old badge names working */
+.badge      { display: inline-flex; align-items: center; gap: 5px; padding: 3px 9px; border-radius: 99px; font-size: 11px; font-weight: 600; }
+.badge-cyan { color: var(--cyan);   border: 1px solid rgba(34,211,238,0.25);  background: rgba(34,211,238,0.06);  }
+.badge-violet{color: var(--violet); border: 1px solid rgba(129,140,248,0.25); background: rgba(129,140,248,0.06); }
+.glass      { background: var(--bg-1); border: 1px solid var(--line); border-radius: var(--r-lg); }
+.glass-hover{ background: var(--bg-1); border: 1px solid var(--line); border-radius: var(--r-lg); transition: border-color 0.2s, background 0.2s; }
+.glass-hover:hover { border-color: var(--line-md); background: var(--bg-2); }
+
+/* ─── NAV LINK ───────────────────────────────────────────── */
+.nav-link {
+  display: flex; align-items: center; gap: 8px;
+  padding: 7px 12px; border-radius: var(--r-sm);
+  font-size: 13px; font-weight: 500; color: var(--text-2);
+  text-decoration: none; transition: all 0.15s; border: 1px solid transparent;
+}
+.nav-link:hover { background: var(--bg-2); color: var(--text); }
+.nav-link.active {
+  color: var(--cyan);
+  background: rgba(34,211,238,0.08);
+  border-color: rgba(34,211,238,0.20);
+}
+
+/* ─── RANGE SLIDER ───────────────────────────────────────── */
+input[type="range"] {
+  -webkit-appearance: none; appearance: none;
+  height: 3px; background: var(--bg-3);
+  border-radius: 99px; outline: none; width: 100%;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none;
+  width: 14px; height: 14px;
+  background: var(--cyan); border-radius: 50%;
+  cursor: pointer; transition: transform 0.15s, box-shadow 0.15s;
+  box-shadow: 0 0 0 3px rgba(34,211,238,0.15);
+}
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 0 5px rgba(34,211,238,0.2);
+}
+
+/* ─── CODE BLOCK ─────────────────────────────────────────── */
+.code-block {
+  background: #0a0e16; border: 1px solid var(--line);
+  border-radius: var(--r-md); padding: 16px 20px;
+  font-family: 'Geist Mono', monospace; font-size: 13px;
+  line-height: 1.75; color: #94a3b8; overflow-x: auto;
+}
+
+/* ─── GRID ANIMATIONS ────────────────────────────────────── */
+@keyframes nodeIn {
+  0%   { transform: scale(0.2); opacity: 0.4; }
+  60%  { transform: scale(1.08); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes pathIn {
+  0%   { transform: scale(0.5); }
+  70%  { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+@keyframes pulse-start {
+  0%,100% { box-shadow: 0 0 0 2px rgba(34,211,238,0.4); }
+  50%     { box-shadow: 0 0 0 5px rgba(34,211,238,0.15); }
+}
+@keyframes pulse-end {
+  0%,100% { box-shadow: 0 0 0 2px rgba(245,158,11,0.4); }
+  50%     { box-shadow: 0 0 0 5px rgba(245,158,11,0.15); }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes dash {
+  to { stroke-dashoffset: -20; }
+}
+@keyframes glow-pulse {
+  0%,100% { opacity: 0.4; }
+  50%     { opacity: 1; }
+}
+
+.animate-visited { animation: nodeIn 0.3s ease forwards; }
+.animate-path    { animation: pathIn 0.4s ease forwards; }
+.animate-start   { animation: pulse-start 2.5s ease-in-out infinite; }
+.animate-end     { animation: pulse-end 2.5s ease-in-out infinite; }
+.animate-fadeup  { animation: fadeUp 0.4s ease forwards; }
+.animate-float   { animation: glow-pulse 3s ease-in-out infinite; }
+.animate-frontier{ animation: nodeIn 0.3s ease forwards; }
+.animate-grid    { animation: fadeUp 0.3s ease forwards; }
+
+/* ─── HERO GRID ──────────────────────────────────────────── */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(34,211,238,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34,211,238,0.035) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* ─── LEAFLET ────────────────────────────────────────────── */
+.leaflet-container { background: var(--bg) !important; border-radius: var(--r-lg); }
+.leaflet-tile { filter: brightness(0.5) saturate(0.3) hue-rotate(190deg); }
+.leaflet-control-zoom {
+  background: var(--bg-1) !important;
+  border: 1px solid var(--line-md) !important;
+  border-radius: var(--r-sm) !important;
+  overflow: hidden;
+}
+.leaflet-control-zoom a {
+  background: transparent !important;
+  color: var(--text-2) !important;
+  border-color: var(--line) !important;
+  font-family: 'Geist', sans-serif !important;
+}
+.leaflet-control-zoom a:hover { color: var(--cyan) !important; }
+.leaflet-popup-content-wrapper {
+  background: var(--bg-1) !important;
+  border: 1px solid var(--line-md) !important;
+  color: var(--text) !important;
+  border-radius: var(--r-md) !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5) !important;
+}
+.leaflet-popup-tip { background: var(--bg-1) !important; }

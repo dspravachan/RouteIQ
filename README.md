@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![RouteIQ](https://img.shields.io/badge/RouteIQ-Pathfinding%20Visualizer-00f5ff?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xMyAyLjA1djIuMDJjMy45NS41MSA3IDMuODUgNyA3Ljkzcy0zLjA1IDcuNDItNyA3LjkzdjIuMDJjNS4wNS0uNTUgOS00Ljc2IDktMTAuMzVTMTguMDUgMi42IDEzIDIuMDV6TTExIDIuMDVDNS45NSAyLjYgMiA2LjgxIDIgMTIuNHM0IDkuMzUgOSA5Ljkxdi0yLjAzQzcuMDUgMTkuNzggNCA xNi4yOCA0IDEyLjQgNCA4LjUyIDcuMDUgNS4wMiAxMSA0LjA3VjIuMDV6Ii8+PC9zdmc+)
+
 ![Next.js](https://img.shields.io/badge/Next.js-16.2.6-black?style=for-the-badge&logo=next.js)
 ![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript)
